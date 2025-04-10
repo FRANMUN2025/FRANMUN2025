@@ -1,4 +1,3 @@
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +18,7 @@
       padding: 20px;
       text-align: center;
     }
-    .highlight {
-      color: #ffd700;
-    }
     .button {
-      display: inline-block;
       background-color: #ffcc00;
       color: #000;
       font-weight: bold;
@@ -31,13 +26,7 @@
       border-radius: 8px;
       text-decoration: none;
       margin: 20px 0;
-    }
-    footer {
-      background-color: #00264d;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      cursor: pointer;
     }
     #landing {
       text-align: center;
@@ -45,6 +34,9 @@
     }
     #passwordPrompt {
       margin-top: 20px;
+    }
+    #error {
+      color: red;
     }
   </style>
 </head>
@@ -59,34 +51,20 @@
     <div id="passwordPrompt" style="display:none;">
       <input type="password" id="passwordInput" placeholder="Enter Chair Password">
       <button class="button" onclick="checkPassword()">Submit</button>
-      <p id="error" style="color:red;"></p>
+      <p id="error"></p>
     </div>
   </div>
 
   <!-- Main Content (Hidden at first) -->
   <div id="delegateContent" style="display:none;">
+    <!-- Your conference content goes here for delegates -->
     <header>
-      <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="School Logo" style="max-width: 150px; margin-bottom: 10px;">
       <h1>Franciscan Sister's School MUN</h1>
-      <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
     </header>
-
     <section>
       <h2>FRANMUN</h2>
       <p>Franciscan Sister's School's First Model United Nations Conference</p>
     </section>
-
-    <div class="card">
-      <h3>Coming Soon!</h3>
-      <p>We're excited to announce our first MUN conference.</p>
-      <p>Stay tuned for updates!</p>
-    </div>
-
-    <footer>
-      <p>Email: franmun2025@gmail.com</p>
-      <p>Franciscan Sister's School Nazareth</p>
-      <p>&copy; 2025 FRANMUN</p>
-    </footer>
   </div>
 
   <!-- JavaScript Logic -->
@@ -101,13 +79,13 @@
     }
 
     function checkPassword() {
-      const correctPassword = "munchair2025"; // Password for Chairs
+      const correctPassword = "munchair2025"; // Correct password for chairs
       const entered = document.getElementById("passwordInput").value;
 
       if (entered === correctPassword) {
-        window.location.href = "index/chairs.html"; // Go to the chairs page in the 'index' folder
+        window.location.href = "chairs.html"; // Redirects to chair-only page (chairs.html)
       } else {
-        document.getElementById("error").textContent = "Incorrect password.";
+        document.getElementById("error").textContent = "Incorrect password. Please try again.";
       }
     }
   </script>
