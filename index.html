@@ -7,26 +7,27 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f8f9fa;
-      color: #343a40;
+      background-color: #f4f4f9;
+      color: #333;
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(to right, #004d7f, #006699);
+      background: linear-gradient(to right, #003366, #006699);
       color: white;
       text-align: center;
-      padding: 80px 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 100px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     header h1 {
       font-size: 3.5rem;
       margin-bottom: 10px;
+      font-weight: bold;
     }
     header p {
       font-size: 1.25rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     .button {
       display: inline-block;
@@ -37,6 +38,7 @@
       border-radius: 30px;
       text-decoration: none;
       margin: 10px;
+      font-size: 1.2rem;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
     .button:hover {
@@ -44,15 +46,15 @@
       transform: translateY(-5px);
     }
     .section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
       max-width: 1100px;
       margin: 0 auto;
     }
     .section h2 {
-      font-size: 2.5rem;
-      color: #004d7f;
-      margin-bottom: 30px;
+      font-size: 2.8rem;
+      color: #003366;
+      margin-bottom: 40px;
     }
     .card {
       background-color: #ffffff;
@@ -66,7 +68,7 @@
       transform: translateY(-10px);
     }
     footer {
-      background-color: #343a40;
+      background-color: #003366;
       color: white;
       text-align: center;
       padding: 30px;
@@ -82,12 +84,17 @@
     #passwordPrompt {
       margin-top: 20px;
     }
+    .highlight {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #ffcc00;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>FRANMUN 2025</h1>
+    <h1>Welcome to FRANMUN 2025</h1>
     <p>Franciscan Sister's School Model United Nations Conference</p>
     <div>
       <button class="button" onclick="showDelegate()">I'm a Delegate</button>
