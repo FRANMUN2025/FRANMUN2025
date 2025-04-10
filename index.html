@@ -5,62 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FRANMUN - Welcome</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e6f0ff;
-      color: #00264d;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f1f3f6;
+      color: #333;
+      line-height: 1.6;
       padding: 0;
     }
     header {
-      background-color: #00264d;
+      background-color: #004d7f;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 50px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
     .button {
       display: inline-block;
       background-color: #ffcc00;
       color: #000;
       font-weight: bold;
-      padding: 12px 24px;
+      padding: 15px 30px;
       border-radius: 8px;
       text-decoration: none;
-      margin: 20px 0;
+      margin: 20px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #e6a800;
     }
     .section {
-      padding: 30px;
+      padding: 60px 20px;
       text-align: center;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #004d7f;
     }
     .card {
       background-color: white;
+      padding: 30px;
       margin: 20px auto;
-      padding: 20px;
-      border-radius: 12px;
       max-width: 600px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
     }
     footer {
-      background-color: #00264d;
+      background-color: #004d7f;
       color: white;
+      padding: 30px;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
     }
-    #landing {
-      text-align: center;
-      padding: 100px 20px;
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
     }
-    #passwordPrompt {
-      margin-top: 20px;
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div id="landing" style="text-align: center; padding: 100px 20px;">
+  <header>
     <h1>Welcome to FRANMUN</h1>
+    <p>Your gateway to the first annual MUN conference</p>
+  </header>
+
+  <div class="section">
+    <h2>Choose Your Role</h2>
     <button class="button" onclick="showDelegate()">I'm a Delegate</button>
     <button class="button" onclick="showPasswordPrompt()">I'm a Chair</button>
 
@@ -72,76 +99,37 @@
   </div>
 
   <div id="delegateContent" style="display:none;">
-    <header>
-      <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="School Logo" style="max-width: 150px; margin-bottom: 10px;">
-      <h1>Franciscan Sister's School MUN</h1>
-      <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
-    </header>
-
     <section class="section">
-      <h2>FRANMUN</h2>
-      <p>Franciscan Sister's School's First Model United Nations Conference</p>
+      <div class="card">
+        <h3>FRANMUN</h3>
+        <p>Join us for an exciting event where delegates will discuss global issues in a Model United Nations conference.</p>
+      </div>
+
+      <div class="card">
+        <h3>Committees</h3>
+        <p>Stay tuned for details about the committees and the topics we will be discussing at FRANMUN.</p>
+      </div>
+
+      <div class="card">
+        <h3>Register Now</h3>
+        <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register →</a>
+      </div>
+
+      <div class="card">
+        <h3>Location</h3>
+        <p>For more details about the location of the event, please visit:</p>
+        <a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" class="button">View Location →</a>
+      </div>
     </section>
-
-    <div class="card">
-      <h3>Coming Soon!</h3>
-      <p>We're excited to announce our first MUN conference.</p>
-      <p>Stay tuned for updates!</p>
-    </div>
-
-    <div style="text-align:center;">
-      <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
-      <p>Registration includes a parent/guardian signature requirement</p>
-    </div>
-
-    <div class="card">
-      <h3>About Our Conference</h3>
-      <p>Welcome to Franciscan Sister's School's inaugural Model United Nations conference! Join us for an exciting event where students will engage in diplomatic discussions, problem-solving, and resolution writing while representing countries from around the world.</p>
-    </div>
-
-    <div class="card">
-      <h3>Committees</h3>
-      <p>Committee details will be announced soon. Our conference will include beginner-friendly committees as well as some for more experienced delegates.</p>
-    </div>
-
-    <!-- Start of Thank You Section -->
-    <div class="card">
-      <h2>Thank You</h2>
-      <p>We would like to take a moment to express our deepest appreciation to the people who have supported and encouraged us throughout our MUN journey. Their guidance, dedication, and belief in us have played a vital role in helping us grow, learn, and participate in this incredible experience.</p>
-
-      <h3>Sister Filippa Arraf</h3>
-      <p>As our school’s principal, Sister Filippa Arraf has been one of the key reasons we are able to take part in MUN. Her encouragement and support for student leadership and global awareness have truly inspired us to aim higher and step into the world of diplomacy and public speaking.</p>
-
-      <h3>Our English Teachers</h3>
-      <p>We are extremely grateful to our amazing English teachers, who have helped us develop the skills we need to succeed in MUN — from writing and research to speaking with confidence. Thank you for your constant support and dedication:</p>
-      <ul style="list-style-type: none; padding: 0;">
-        <li>Amal Shamshoum</li>
-        <li>Hazar Saad Kanazi</li>
-        <li>Heba Ewayed-Banna</li>
-        <li>Muna Abu-Salemy</li>
-        <li>Rina Mazzawi Marjieh</li>
-        <li>Rose Jabaley</li>
-      </ul>
-
-      <h3>Maria Faranesh</h3>
-      <p>To our incredible MUN advisor, Maria Faranesh — thank you for being our mentor, guide, and biggest supporter. Your dedication, enthusiasm, and belief in us have made all the difference. We couldn’t have done it without you.</p>
-    </div>
-    <!-- End of Thank You Section -->
-
-    <footer>
-      <p>Email: franmun2025@gmail.com</p>
-      <p>Franciscan Sister's School Nazareth</p>
-      <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
-      <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
-    </footer>
   </div>
 
-  <script>
-    // Check if password is already entered and redirect to chair page
-    if (sessionStorage.getItem("isChairAuthenticated") === "true") {
-      window.location.href = "chairs.html";  // Redirects to the chairs page if authenticated
-    }
+  <footer>
+    <p>Email: franmun2025@gmail.com</p>
+    <p>&copy; 2025 FRANMUN | All Rights Reserved</p>
+    <p><button class="button" onclick="goBackToOptions()">Go Back to Options</button></p>
+  </footer>
 
+  <script>
     function showDelegate() {
       document.getElementById("landing").style.display = "none";
       document.getElementById("delegateContent").style.display = "block";
@@ -152,15 +140,20 @@
     }
 
     function checkPassword() {
-      const correctPassword = "munchair2025";  // The correct password
+      const correctPassword = "munchair2025";
       const enteredPassword = document.getElementById("passwordInput").value;
 
       if (enteredPassword === correctPassword) {
-        sessionStorage.setItem("isChairAuthenticated", "true");  // Set session storage if authenticated
-        window.location.href = "chairs.html";  // Redirect to the chairs page after authentication
+        sessionStorage.setItem("isChairAuthenticated", "true");
+        window.location.href = "chairs.html";
       } else {
-        document.getElementById("error").textContent = "Incorrect password.";  // Show error message
+        document.getElementById("error").textContent = "Incorrect password.";
       }
+    }
+
+    function goBackToOptions() {
+      document.getElementById("delegateContent").style.display = "none";
+      document.getElementById("landing").style.display = "block";
     }
   </script>
 
