@@ -3,104 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chair Resources - FRANMUN</title>
+  <title>FRANMUN - Chairs Page</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e6f0ff;
-      color: #00264d;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f1f3f6;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background-color: #00264d;
+      background-color: #004d7f;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 50px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
     .button {
       display: inline-block;
       background-color: #ffcc00;
       color: #000;
       font-weight: bold;
-      padding: 12px 24px;
+      padding: 15px 30px;
       border-radius: 8px;
       text-decoration: none;
-      margin: 20px 0;
+      margin: 20px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #e6a800;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #004d7f;
     }
     .card {
-      background: white;
-      max-width: 700px;
-      margin: 40px auto;
+      background-color: white;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      text-align: center;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
     }
     footer {
-      background-color: #00264d;
+      background-color: #004d7f;
       color: white;
+      padding: 30px;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>FRANMUN Chair Portal</h1>
-    <p>Private Access for Chairs Only</p>
+    <h1>Chairs Page</h1>
+    <p>Welcome to the FRANMUN Chair Section</p>
   </header>
 
-  <div id="passwordPrompt" style="text-align: center; padding: 100px 20px;">
-    <input type="password" id="passwordInput" placeholder="Enter Chair Password">
-    <button class="button" onclick="checkPassword()">Submit</button>
-    <p id="error" style="color:red;"></p>
-  </div>
-
-  <div id="chairContent" style="display: none;">
+  <div class="section">
     <div class="card">
-      <h2>Chair Resources Coming Soon</h2>
-      <p>We’re working on uploading all the documents, schedules, and chairing guides you’ll need for the conference.</p>
-      <p>Stay tuned!</p>
+      <h3>Chair Instructions</h3>
+      <p>As a chair, you will oversee the smooth running of the MUN conference, ensuring that all delegates have an equal opportunity to participate and engage in discussions.</p>
+      <p>More information will be provided to you about your specific committee and responsibilities soon.</p>
     </div>
 
-    <!-- Button to go back to the landing page -->
-    <div style="text-align: center;">
-      <button class="button" onclick="goBack()">Back to Options</button>
-    </div>
+    <button class="button" onclick="window.history.back()">Go Back to Options</button>
   </div>
 
   <footer>
     <p>Email: franmun2025@gmail.com</p>
-    <p>Franciscan Sister's School Nazareth</p>
-    <p>&copy; 2025 FRANMUN</p>
+    <p>&copy; 2025 FRANMUN | All Rights Reserved</p>
   </footer>
-
-  <script>
-    // Check if the user has already been authenticated
-    if (sessionStorage.getItem("isChairAuthenticated") === "true") {
-      document.getElementById("passwordPrompt").style.display = "none";
-      document.getElementById("chairContent").style.display = "block";
-    }
-
-    function checkPassword() {
-      const correctPassword = "munchair2025"; // Replace with the actual password
-      const enteredPassword = document.getElementById("passwordInput").value;
-
-      if (enteredPassword === correctPassword) {
-        sessionStorage.setItem("isChairAuthenticated", "true"); // Store successful login
-        document.getElementById("passwordPrompt").style.display = "none";
-        document.getElementById("chairContent").style.display = "block";
-      } else {
-        document.getElementById("error").textContent = "Incorrect password.";
-      }
-    }
-    }
-  </script>
 
 </body>
 </html>
