@@ -18,7 +18,23 @@
       padding: 20px;
       text-align: center;
     }
+    .highlight {
+      color: #ffd700;
+    }
+    .section {
+      padding: 30px;
+      text-align: center;
+    }
+    .card {
+      background-color: white;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
     .button {
+      display: inline-block;
       background-color: #ffcc00;
       color: #000;
       font-weight: bold;
@@ -26,7 +42,13 @@
       border-radius: 8px;
       text-decoration: none;
       margin: 20px 0;
-      cursor: pointer;
+    }
+    footer {
+      background-color: #00264d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
     }
     #landing {
       text-align: center;
@@ -34,9 +56,6 @@
     }
     #passwordPrompt {
       margin-top: 20px;
-    }
-    #error {
-      color: red;
     }
   </style>
 </head>
@@ -51,20 +70,56 @@
     <div id="passwordPrompt" style="display:none;">
       <input type="password" id="passwordInput" placeholder="Enter Chair Password">
       <button class="button" onclick="checkPassword()">Submit</button>
-      <p id="error"></p>
+      <p id="error" style="color:red;"></p>
     </div>
   </div>
 
   <!-- Main Content (Hidden at first) -->
   <div id="delegateContent" style="display:none;">
-    <!-- Your conference content goes here for delegates -->
     <header>
+      <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="School Logo" style="max-width: 150px; margin-bottom: 10px;">
       <h1>Franciscan Sister's School MUN</h1>
+      <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
     </header>
-    <section>
+
+    <section class="section">
       <h2>FRANMUN</h2>
       <p>Franciscan Sister's School's First Model United Nations Conference</p>
     </section>
+
+    <div class="card">
+      <h3>Coming Soon!</h3>
+      <p>We're excited to announce our first MUN conference.</p>
+      <p>Stay tuned for updates!</p>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
+      <p>Registration includes a parent/guardian signature requirement</p>
+    </div>
+
+    <div class="card">
+      <h3>About Our Conference</h3>
+      <p>Welcome to Franciscan Sister's School's inaugural Model United Nations conference! Join us for an exciting event where students will engage in diplomatic discussions, problem-solving, and resolution writing while representing countries from around the world.</p>
+    </div>
+
+    <div class="card">
+      <h3>Committees</h3>
+      <p>Committee details will be announced soon. Our conference will include beginner-friendly committees as well as some for more experienced delegates.</p>
+    </div>
+
+    <div class="card">
+      <h2>Thank You</h2>
+      <p>We would like to take a moment to express our deepest appreciation...</p>
+      <!-- You can keep the rest of your Thank You section here -->
+    </div>
+
+    <footer>
+      <p>Email: franmun2025@gmail.com</p>
+      <p>Franciscan Sister's School Nazareth</p>
+      <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
+      <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
+    </footer>
   </div>
 
   <!-- JavaScript Logic -->
@@ -79,13 +134,13 @@
     }
 
     function checkPassword() {
-      const correctPassword = "munchair2025"; // Correct password for chairs
+      const correctPassword = "munchair2025"; // Change this to your real password
       const entered = document.getElementById("passwordInput").value;
 
       if (entered === correctPassword) {
-        window.location.href = "chairs.html"; // Redirects to chair-only page (chairs.html)
+        window.location.href = "chairs.html"; // Redirects to chairs.html directly
       } else {
-        document.getElementById("error").textContent = "Incorrect password. Please try again.";
+        document.getElementById("error").textContent = "Incorrect password.";
       }
     }
   </script>
