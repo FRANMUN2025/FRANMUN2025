@@ -108,6 +108,7 @@
     </div>
   </header>
 
+  <!-- Delegate Content -->
   <div id="delegateContent" style="display:none;">
     <div class="section">
       <h2>Welcome to FRANMUN</h2>
@@ -150,6 +151,11 @@
         <p>A special thank you to our MUN advisor, Maria Faranesh. Your mentorship and support have made this journey possible, and we are deeply grateful for your guidance.</p>
       </div>
       <!-- End of Thank You Section -->
+
+      <!-- Go Back Button -->
+      <div style="text-align: center; margin-top: 40px;">
+        <button class="button" onclick="goBackToOptions()">Go Back to Options</button>
+      </div>
     </div>
 
     <footer>
@@ -184,6 +190,13 @@
       } else {
         document.getElementById("error").textContent = "Incorrect password."; // Show error message for wrong password
       }
+    }
+
+    // Go back to the options page
+    function goBackToOptions() {
+      document.getElementById("delegateContent").style.display = "none"; // Hide delegate content
+      document.getElementById("passwordPrompt").style.display = "none"; // Hide password prompt
+      document.getElementById("landing").style.display = "block"; // Show the main options page again
     }
   </script>
 
