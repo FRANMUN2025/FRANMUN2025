@@ -161,24 +161,28 @@
   </div>
 
   <script>
+    // Function to show delegate content
     function showDelegate() {
-      document.getElementById("passwordPrompt").style.display = "none";
-      document.getElementById("delegateContent").style.display = "block"; // This line ensures the delegate section appears
+      document.getElementById("passwordPrompt").style.display = "none"; // Hide password prompt if visible
+      document.getElementById("delegateContent").style.display = "block"; // Show delegate section
     }
 
+    // Function to show the password prompt for chairs
     function showPasswordPrompt() {
-      document.getElementById("passwordPrompt").style.display = "block"; // This shows the password prompt for Chairs
+      document.getElementById("passwordPrompt").style.display = "block"; // Show password prompt
+      document.getElementById("delegateContent").style.display = "none"; // Hide delegate content if password prompt is shown
     }
 
+    // Check if the entered password matches the correct one
     function checkPassword() {
-      const correctPassword = "munchair2025"; // Replace with the actual password
+      const correctPassword = "munchair2025"; // The correct password for chairs
       const enteredPassword = document.getElementById("passwordInput").value;
 
       if (enteredPassword === correctPassword) {
         sessionStorage.setItem("isChairAuthenticated", "true"); // Store successful login
         window.location.href = "chairs.html"; // Redirect to chairs page
       } else {
-        document.getElementById("error").textContent = "Incorrect password.";
+        document.getElementById("error").textContent = "Incorrect password."; // Show error message for wrong password
       }
     }
   </script>
