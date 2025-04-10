@@ -1,8 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chair Resources - FRANMUN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6f0ff;
+      color: #00264d;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00264d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1, h2 {
+      margin: 0;
+      padding: 10px;
+    }
+    p {
+      font-size: 18px;
+    }
+    footer {
+      background-color: #00264d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FRANMUN Chair Portal</h1>
+    <p>Private Access for Chairs Only</p>
+  </header>
+
+  <div class="card">
+    <h2>Chair Resources Coming Soon</h2>
+    <p>We’re working on uploading all the documents, schedules, and chairing guides you’ll need for the conference.</p>
+    <p>Stay tuned!</p>
+  </div>
+
+  <footer>
+    <p>Email: franmun2025@gmail.com</p>
+    <p>Franciscan Sister's School Nazareth</p>
+    <p>&copy; 2025 FRANMUN</p>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FRANMUN</title>
   <style>
     body {
@@ -18,24 +85,8 @@
       padding: 20px;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
     .highlight {
       color: #ffd700;
-    }
-    .section {
-      padding: 30px;
-      text-align: center;
-    }
-    .card {
-      background-color: white;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 600px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .button {
       display: inline-block;
@@ -46,7 +97,6 @@
       border-radius: 8px;
       text-decoration: none;
       margin: 20px 0;
-      cursor: pointer;
     }
     footer {
       background-color: #00264d;
@@ -87,7 +137,7 @@
       <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
     </header>
 
-    <section class="section">
+    <section>
       <h2>FRANMUN</h2>
       <p>Franciscan Sister's School's First Model United Nations Conference</p>
     </section>
@@ -98,32 +148,10 @@
       <p>Stay tuned for updates!</p>
     </div>
 
-    <div style="text-align:center;">
-      <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
-      <p>Registration includes a parent/guardian signature requirement</p>
-    </div>
-
-    <div class="card">
-      <h3>About Our Conference</h3>
-      <p>Welcome to Franciscan Sister's School's inaugural Model United Nations conference! Join us for an exciting event where students will engage in diplomatic discussions, problem-solving, and resolution writing while representing countries from around the world.</p>
-    </div>
-
-    <div class="card">
-      <h3>Committees</h3>
-      <p>Committee details will be announced soon. Our conference will include beginner-friendly committees as well as some for more experienced delegates.</p>
-    </div>
-
-    <div class="card">
-      <h2>Thank You</h2>
-      <p>We would like to take a moment to express our deepest appreciation...</p>
-      <!-- You can keep the rest of your Thank You section here -->
-    </div>
-
     <footer>
       <p>Email: franmun2025@gmail.com</p>
       <p>Franciscan Sister's School Nazareth</p>
-      <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
-      <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
+      <p>&copy; 2025 FRANMUN</p>
     </footer>
   </div>
 
@@ -139,14 +167,13 @@
     }
 
     function checkPassword() {
-      const correctPassword = "munchair2025"; // Your chosen password
+      const correctPassword = "munchair2025"; // Password for Chairs
       const entered = document.getElementById("passwordInput").value;
 
       if (entered === correctPassword) {
-        // Redirect to chairs.html if the password is correct
-        window.location.href = "chairs.html"; // Ensure 'chairs.html' is in the same folder
+        window.location.href = "index/chairs.html"; // Go to the chairs page in the 'index' folder
       } else {
-        document.getElementById("error").textContent = "Incorrect password. Please try again.";
+        document.getElementById("error").textContent = "Incorrect password.";
       }
     }
   </script>
