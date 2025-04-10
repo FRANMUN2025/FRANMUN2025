@@ -139,13 +139,14 @@
     }
 
     function checkPassword() {
-      const correctPassword = "munchair2025"; // Change this to your real password
+      const correctPassword = "munchair2025"; // Your chosen password
       const entered = document.getElementById("passwordInput").value;
 
       if (entered === correctPassword) {
-        window.location.href = "chairs.html"; // Redirects to chair-only page
+        // Redirect to chairs.html if the password is correct
+        window.location.href = "chairs.html"; // Ensure 'chairs.html' is in the same folder
       } else {
-        document.getElementById("error").textContent = "Incorrect password.";
+        document.getElementById("error").textContent = "Incorrect password. Please try again.";
       }
     }
   </script>
