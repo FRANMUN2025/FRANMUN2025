@@ -42,6 +42,10 @@
       margin-top: 40px;
       font-size: 14px;
     }
+    #passwordPrompt {
+      margin-top: 20px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -51,10 +55,20 @@
     <p>Private Access for Chairs Only</p>
   </header>
 
-  <div class="card">
-    <h2>Chair Resources Coming Soon</h2>
-    <p>We’re working on uploading all the documents, schedules, and chairing guides you’ll need for the conference.</p>
-    <p>Stay tuned!</p>
+  <!-- Password Prompt -->
+  <div id="passwordPrompt">
+    <input type="password" id="passwordInput" placeholder="Enter Chair Password">
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <!-- Content that will appear after correct password -->
+  <div id="chairContent" style="display:none;">
+    <div class="card">
+      <h2>Chair Resources Coming Soon</h2>
+      <p>We’re working on uploading all the documents, schedules, and chairing guides you’ll need for the conference.</p>
+      <p>Stay tuned!</p>
+    </div>
   </div>
 
   <footer>
@@ -62,6 +76,20 @@
     <p>Franciscan Sister's School Nazareth</p>
     <p>&copy; 2025 FRANMUN</p>
   </footer>
+
+  <script>
+    function checkPassword() {
+      const correctPassword = "munchair2025"; // This is the password you want for chairs
+      const enteredPassword = document.getElementById("passwordInput").value;
+
+      if (enteredPassword === correctPassword) {
+        document.getElementById("passwordPrompt").style.display = "none";
+        document.getElementById("chairContent").style.display = "block";
+      } else {
+        document.getElementById("error").textContent = "Incorrect password. Please try again.";
+      }
+    }
+  </script>
 
 </body>
 </html>
