@@ -1,184 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUN Conference</title>
-    <style>
-        /* General styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1, h2 {
-            margin: 0;
-            color: #004080;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FRANMUN | Franciscan Sisters School - Nazareth</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #1a1a1a;
+      text-align: center;
+    }
 
-        /* Header Section */
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.2em;
-        }
+    header {
+      background-color: #003366;
+      padding: 40px 20px;
+      color: white;
+    }
 
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px;
-            text-align: center;
-        }
-        .main-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .main-content p {
-            font-size: 1.2em;
-            color: #555;
-            margin-bottom: 40px;
-        }
-        
-        /* Buttons */
-        .btn {
-            background-color: #006bb3;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            display: inline-block;
-            margin: 15px;
-            transition: background-color 0.3s ease, transform 0.2s;
-        }
-        .btn:hover {
-            background-color: #004080;
-            transform: translateY(-5px);
-        }
+    header img {
+      max-width: 120px;
+      margin-bottom: 20px;
+    }
 
-        /* Form Container */
-        .form-container {
-            margin-top: 50px;
-            display: none;
-            text-align: center;
-        }
-        .form-container form {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-        .form-container label {
-            display: block;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-            color: #333;
-        }
-        .form-container input[type="password"], .form-container input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            font-size: 1.1em;
-            margin-bottom: 25px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .form-container input[type="submit"] {
-            background-color: #006bb3;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .form-container input[type="submit"]:hover {
-            background-color: #004080;
-        }
+    header h1 {
+      font-size: 2.8em;
+      margin: 10px 0;
+    }
 
-        /* Footer Section */
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            font-size: 1em;
-        }
-    </style>
+    header p {
+      font-size: 1.2em;
+    }
+
+    .buttons {
+      margin: 40px 0;
+    }
+
+    button {
+      font-size: 1.1em;
+      padding: 15px 30px;
+      margin: 10px;
+      background-color: #0055a5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #003f7d;
+    }
+
+    #passwordSection {
+      margin-top: 20px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1em;
+      width: 200px;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      padding: 20px;
+      background-color: #e8e8e8;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>MUN Conference 2025</h1>
-        <p>Location: [City Name], [Country]</p>
-    </div>
-</header>
+  <header>
+    <img src="AF36378F-FD28-4D00-AF20-44CB8CEC44E4.jpeg" alt="Franciscan Sisters School Logo" />
+    <h1>FRANMUN</h1>
+    <p>Hosted by the Franciscan Sisters' Secondary School, Nazareth</p>
+  </header>
 
-<div class="container main-content">
-    <p>Thank you for joining us at the MUN Conference. Please select your role to proceed:</p>
-    <a href="#" class="btn" id="delegate-btn">I'm a Delegate</a>
-    <a href="#" class="btn" id="chair-btn">I'm a Chair</a>
-</div>
+  <div class="buttons">
+    <button onclick="goToDelegate()">I'm a Delegate</button>
+    <button onclick="showPassword()">I'm a Chair</button>
+  </div>
 
-<div class="container form-container" id="chair-form-container">
-    <form id="chair-form">
-        <label for="password">Enter Chair Password:</label>
-        <input type="password" id="password" name="password" required>
-        <input type="submit" value="Submit">
-    </form>
-</div>
+  <div id="passwordSection" class="hidden">
+    <p>Please enter the chair password:</p>
+    <input type="password" id="chairPassword" placeholder="Password" />
+    <button onclick="validatePassword()">Submit</button>
+  </div>
 
-<footer>
-    <p>&copy; 2025 MUN Conference | All Rights Reserved</p>
-</footer>
+  <footer>
+    &copy; 2025 FRANMUN — Franciscan Sisters' Secondary School, Nazareth
+  </footer>
 
-<script>
-    const chairButton = document.getElementById('chair-btn');
-    const delegateButton = document.getElementById('delegate-btn');
-    const chairFormContainer = document.getElementById('chair-form-container');
-    const chairForm = document.getElementById('chair-form');
+  <script>
+    function goToDelegate() {
+      window.location.href = "delegate.html";
+    }
 
-    // Delegate button redirects
-    delegateButton.addEventListener('click', () => {
-        window.location.href = 'delegate.html'; // Replace with your delegate page link
-    });
+    function showPassword() {
+      document.getElementById("passwordSection").classList.remove("hidden");
+    }
 
-    // Chair button shows password form
-    chairButton.addEventListener('click', () => {
-        chairFormContainer.style.display = 'block';
-    });
+    function validatePassword() {
+      const password = document.getElementById("chairPassword").value;
+      const correctPassword = "yourChairPassword"; // change this securely!
 
-    // Chair password form submission
-    chairForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const password = document.getElementById('password').value;
-        const correctPassword = 'yourChairPassword'; // Replace with your actual chair password
-
-        if (password === correctPassword) {
-            window.location.href = 'chairs.html'; // Replace with your chairs page link
-        } else {
-            alert('Incorrect password!');
-        }
-    });
-</script>
+      if (password === correctPassword) {
+        window.location.href = "chairs.html";
+      } else {
+        alert("Incorrect password!");
+      }
+    }
+  </script>
 
 </body>
 </html>
