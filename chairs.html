@@ -1,30 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Chairs Only</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chairs Portal – FRANMUN</title>
+  <link rel="icon" type="image/png" href="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; padding: 40px; }
-    #content { display: none; }
+    :root {
+      --main-blue: #00264d;
+      --accent-yellow: #ffcc00;
+      --bg-light: #f4f7fa;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-light);
+      color: #1a1a1a;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: var(--main-blue);
+    }
+
+    #login, #content {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="password"], input[type="text"], input[type="email"], textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: var(--accent-yellow);
+      color: black;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e6b800;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    #error {
+      color: red;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <h2>Chairs Login</h2>
+
   <div id="login">
-    <input type="password" id="password" placeholder="Enter password">
+    <h2>Chairs Login</h2>
+    <input type="password" id="password" placeholder="Enter Chair Password">
     <button onclick="checkPassword()">Enter</button>
-    <p id="error" style="color: red;"></p>
+    <p id="error"></p>
   </div>
 
-  <div id="content">
+  <div id="content" style="display:none;">
     <h3>Welcome, Chairs!</h3>
-    <p>This page contains important instructions for you only.</p>
-    <!-- Add more content here -->
+    <p>Please fill out the registration form below:</p>
+
+    <form action="https://formsubmit.co/franmun2025@gmail.com" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="school">School Name</label>
+      <input type="text" name="school" id="school" required>
+
+      <label for="committee">Preferred Committee (if any)</label>
+      <input type="text" name="committee" id="committee">
+
+      <label for="experience">MUN Experience</label>
+      <textarea name="experience" id="experience" rows="4" placeholder="Briefly describe your MUN background..."></textarea>
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <button type="submit">Submit Registration</button>
+    </form>
   </div>
 
   <script>
     function checkPassword() {
-      const correctPassword = "yourpassword"; // <-- Change this to your password
+      const correctPassword = "munchair2025";
       const entered = document.getElementById("password").value;
+
       if (entered === correctPassword) {
         document.getElementById("login").style.display = "none";
         document.getElementById("content").style.display = "block";
@@ -33,5 +120,6 @@
       }
     }
   </script>
+
 </body>
 </html>
