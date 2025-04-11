@@ -1,112 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delegate Registration | MUN Conference</title>
-    <style>
-        /* Same base styles as in the index page */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FRANMUN | Delegate Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafc;
+      color: #1a1a1a;
+      text-align: center;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-        }
+    header {
+      background-color: #003366;
+      padding: 40px 20px;
+      color: white;
+    }
 
-        .form-container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .form-container h2 {
-            font-size: 2em;
-            margin-bottom: 30px;
-        }
+    header img {
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
 
-        label {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            display: block;
-        }
-        input[type="text"], input[type="email"], select, textarea {
-            width: 100%;
-            padding: 12px;
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            background-color: #006bb3;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        input[type="submit"]:hover {
-            background-color: #004080;
-        }
-    </style>
+    header h1 {
+      font-size: 2.2em;
+      margin: 10px 0;
+    }
+
+    .content {
+      padding: 40px 20px;
+    }
+
+    .content p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    footer {
+      padding: 20px;
+      background-color: #e8e8e8;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>Delegate Registration</h1>
-        <p>Welcome to the MUN Conference</p>
-    </div>
-</header>
+  <header>
+    <img src="AF36378F-FD28-4D00-AF20-44CB8CEC44E4.jpeg" alt="Franciscan Sisters School Logo" />
+    <h1>FRANMUN Delegate Portal</h1>
+  </header>
 
-<div class="container">
-    <div class="form-container">
-        <h2>Delegate Registration Form</h2>
-        <form action="submit-delegate-form.php" method="POST">
-            <label for="full-name">Full Name:</label>
-            <input type="text" id="full-name" name="full-name" required>
+  <div class="content">
+    <p>Welcome to the FRANMUN Delegate Portal. Here you will soon find important updates, documents, schedules, and resources for your participation in the conference.</p>
+    <p>Stay tuned!</p>
+  </div>
 
-            <label for="country">Country Representing:</label>
-            <input type="text" id="country" name="country" required>
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="experience">MUN Experience (Optional):</label>
-            <textarea id="experience" name="experience" rows="4"></textarea>
-
-            <label for="session">Select Session:</label>
-            <select id="session" name="session" required>
-                <option value="General Assembly">General Assembly</option>
-                <option value="Security Council">Security Council</option>
-                <option value="Specialized Committee">Specialized Committee</option>
-            </select>
-
-            <input type="submit" value="Submit Registration">
-        </form>
-    </div>
-</div>
+  <footer>
+    &copy; 2025 FRANMUN — Franciscan Sisters' Secondary School, Nazareth
+  </footer>
 
 </body>
 </html>
