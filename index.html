@@ -5,133 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FRANMUN</title>
   <link rel="icon" type="image/png" href="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --main-blue: #00264d;
-      --accent-yellow: #ffcc00;
-      --background-light: #f4f7fa;
-      --card-bg: #ffffff;
-      --text-dark: #1a1a1a;
-    }
-
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--background-light);
-      color: var(--text-dark);
+      font-family: Arial, sans-serif;
+      background-color: #e6f0ff;
+      color: #00264d;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background: linear-gradient(to right, #001933, #003366);
+      background-color: #00264d;
       color: white;
-      padding: 40px 20px;
+      padding: 20px;
       text-align: center;
-    }
-
-    header img {
-      max-width: 140px;
-      margin-bottom: 15px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 34px;
-      font-weight: 700;
+      font-size: 28px;
     }
 
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
+    .highlight {
+      color: #ffd700;
     }
 
-    .section {
-      padding: 50px 20px;
+    .section { 
+      padding: 30px;
       text-align: center;
     }
 
     .card {
-      background-color: var(--card-bg);
+      background-color: white;
       margin: 20px auto;
-      padding: 30px;
+      padding: 20px;
       border-radius: 12px;
-      max-width: 700px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .button {
       display: inline-block;
-      background-color: var(--accent-yellow);
+      background-color: #ffcc00;
       color: #000;
       font-weight: bold;
-      padding: 14px 28px;
-      border-radius: 10px;
+      padding: 12px 24px;
+      border-radius: 8px;
       text-decoration: none;
-      margin: 15px 10px;
-      transition: background-color 0.3s;
+      margin: 20px 0;
       cursor: pointer;
     }
 
-    .button:hover {
-      background-color: #e6b800;
-    }
-
     footer {
-      background-color: var(--main-blue);
+      background-color: #00264d;
       color: white;
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       font-size: 14px;
     }
 
-    footer a {
-      color: #fff;
-      text-decoration: underline;
+    /* Chair button */
+    .top-right-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
     }
 
-    #landing {
-      text-align: center;
-      padding: 100px 20px;
-      background-color: #e6f0ff;
+    .top-right-button a {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
     }
 
-    #passwordPrompt {
-      margin-top: 20px;
-    }
-
-    ul {
-      padding: 0;
-      list-style-type: none;
-    }
-
-    ul li {
-      padding: 4px 0;
+    .top-right-button a:hover {
+      background-color: #e6b800;
     }
   </style>
 </head>
 <body>
 
-  <!-- Landing Screen -->
-  <div id="landing">
-    <h1>Welcome to <span style="color: var(--main-blue); font-weight: 700;">FRANMUN</span></h1>
-    <p>The First Annual Model United Nations Conference</p>
-    <button class="button" onclick="showDelegate()">I'm a Delegate</button>
-    <button class="button" onclick="showPasswordPrompt()">I'm a Chair</button>
-
-    <div id="passwordPrompt" style="display:none;">
-      <input type="password" id="passwordInput" placeholder="Enter Chair Password">
-      <button class="button" onclick="checkPassword()">Submit</button>
-      <p id="error" style="color:red;"></p>
-    </div>
+  <!-- Chair button -->
+  <div class="top-right-button">
+    <a href="chairs.html">Chair Registration</a>
   </div>
 
-  <!-- Delegate Content -->
-  <div id="delegateContent" style="display:none;">
+  <!-- Main Content -->
+  <div id="delegateContent">
     <header>
-      <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="FRANMUN Logo">
+      <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="School Logo" style="max-width: 150px; margin-bottom: 10px;">
       <h1>Franciscan Sister's School MUN</h1>
-      <p><span style="color: var(--accent-yellow); font-weight: bold;">FRANMUN</span> | First Annual Conference</p>
+      <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
     </header>
 
     <section class="section">
@@ -162,13 +130,14 @@
 
     <div class="card">
       <h2>Thank You</h2>
-      <p>We would like to take a moment to express our deepest appreciation to the people who have supported and encouraged us throughout our MUN journey.</p>
+      <p>We would like to take a moment to express our deepest appreciation to the people who have supported and encouraged us throughout our MUN journey. Their guidance, dedication, and belief in us have played a vital role in helping us grow, learn, and participate in this incredible experience.</p>
 
       <h3>Sister Filippa Arraf</h3>
-      <p>As our school’s principal, Sister Filippa Arraf has been one of the key reasons we are able to take part in MUN. Her encouragement and support for student leadership and global awareness have truly inspired us.</p>
+      <p>As our school’s principal, Sister Filippa Arraf has been one of the key reasons we are able to take part in MUN. Her encouragement and support for student leadership and global awareness have truly inspired us to aim higher and step into the world of diplomacy and public speaking.</p>
 
       <h3>Our English Teachers</h3>
-      <ul>
+      <p>We are extremely grateful to our amazing English teachers, who have helped us develop the skills we need to succeed in MUN — from writing and research to speaking with confidence. Thank you for your constant support and dedication:</p>
+      <ul style="list-style-type: none; padding: 0;">
         <li>Amal Shamshoum</li>
         <li>Hazar Saad Kanazi</li>
         <li>Heba Ewayed-Banna</li>
@@ -178,40 +147,16 @@
       </ul>
 
       <h3>Maria Faranesh</h3>
-      <p>To our incredible MUN advisor — thank you for being our mentor, guide, and biggest supporter. We couldn’t have done it without you.</p>
+      <p>To our incredible MUN advisor, Maria Faranesh — thank you for being our mentor, guide, and biggest supporter. Your dedication, enthusiasm, and belief in us have made all the difference. We couldn’t have done it without you.</p>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>Email: franmun2025@gmail.com</p>
-    <p>Franciscan Sister's School, Nazareth</p>
-    <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank">View Location</a></p>
+    <p>Franciscan Sister's School Nazareth</p>
+    <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
     <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
   </footer>
-
-  <!-- JavaScript Logic -->
-  <script>
-    function showDelegate() {
-      document.getElementById("landing").style.display = "none";
-      document.getElementById("delegateContent").style.display = "block";
-    }
-
-    function showPasswordPrompt() {
-      document.getElementById("passwordPrompt").style.display = "block";
-    }
-
-    function checkPassword() {
-      const correctPassword = "munchair2025";
-      const entered = document.getElementById("passwordInput").value;
-
-      if (entered === correctPassword) {
-        window.location.href = "chairs.html";
-      } else {
-        document.getElementById("error").textContent = "Incorrect password. Please try again.";
-      }
-    }
-  </script>
 
 </body>
 </html>
