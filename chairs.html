@@ -1,72 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FRANMUN - Chairs</title>
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f1f3f6;
-      color: #333;
-      line-height: 1.6;
-      margin: 0;
-    }
-    header {
-      background: linear-gradient(to right, #004d7f, #006699);
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    .card {
-      background-color: white;
-      margin: 20px auto;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 700px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-    }
-    footer {
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-      padding: 30px;
-    }
-    footer a {
-      color: #ffcc00;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chair Registration | MUN Conference</title>
+    <style>
+        /* Same base styles as in the index page */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #006bb3;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #004080;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>FRANMUN Chairs</h1>
-    <p>Welcome to the Chairs Page</p>
-  </header>
-
-  <div class="section">
-    <div class="card">
-      <h3>Chair Instructions</h3>
-      <p>As a chair, your role is to facilitate discussion, ensure decorum, and help delegates in drafting resolutions.</p>
-      <p>More details will be provided about your specific committee.</p>
+<header>
+    <div class="container">
+        <h1>Chair Registration</h1>
+        <p>Welcome, Chairperson!</p>
     </div>
-    <footer>
-      <p>Email: franmun2025@gmail.com</p>
-      <p>&copy; 2025 FRANMUN | All Rights Reserved</p>
-    </footer>
-  </div>
+</header>
+
+<div class="container">
+    <div class="form-container">
+        <h2>Chair Registration Form</h2>
+        <form action="submit-chair-form.php" method="POST">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required>
+
+            <label for="committee">Committee Assigned To:</label>
+            <input type="text" id="committee" name="committee" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="experience">MUN Experience (Optional):</label>
+            <textarea id="experience" name="experience" rows="4"></textarea>
+
+            <label for="session">Select Session:</label>
+            <select id="session" name="session" required>
+                <option value="General Assembly">General Assembly</option>
+                <option value="Security Council">Security Council</option>
+                <option value="Specialized Committee">Specialized Committee</option>
+            </select>
+
+            <input type="submit" value="Submit Registration">
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
