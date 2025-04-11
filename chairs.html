@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chairs Only</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; }
+    #content { display: none; }
+  </style>
+</head>
+<body>
+  <h2>Chairs Login</h2>
+  <div id="login">
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Enter</button>
+    <p id="error" style="color: red;"></p>
+  </div>
 
+  <div id="content">
+    <h3>Welcome, Chairs!</h3>
+    <p>This page contains important instructions for you only.</p>
+    <!-- Add more content here -->
+  </div>
+
+  <script>
+    function checkPassword() {
+      const correctPassword = "yourpassword"; // <-- Change this to your password
+      const entered = document.getElementById("password").value;
+      if (entered === correctPassword) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        document.getElementById("error").textContent = "Incorrect password. Try again.";
+      }
+    }
+  </script>
+</body>
+</html>
