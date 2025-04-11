@@ -4,9 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FRANMUN</title>
+  <link rel="icon" type="image/png" href="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #e6f0ff;
       color: #00264d;
       margin: 0;
@@ -18,6 +23,12 @@
       padding: 20px;
       text-align: center;
     }
+    header img {
+      width: 80px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
     header h1 {
       margin: 0;
       font-size: 28px;
@@ -26,7 +37,7 @@
       color: #ffd700;
     }
     .section {
-      padding: 30px;
+      padding: 30px 20px;
       text-align: center;
     }
     .card {
@@ -34,7 +45,7 @@
       margin: 20px auto;
       padding: 20px;
       border-radius: 12px;
-      max-width: 600px;
+      max-width: 700px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .button {
@@ -46,6 +57,10 @@
       border-radius: 8px;
       text-decoration: none;
       margin: 20px 0;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #e6b800;
     }
     footer {
       background-color: #00264d;
@@ -54,10 +69,29 @@
       padding: 20px;
       font-size: 14px;
     }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+      .card {
+        margin: 10px 10px;
+        padding: 15px;
+      }
+      .button {
+        width: 90%;
+        display: inline-block;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="FRANMUN Logo" />
     <h1>Franciscan Sister's School MUN</h1>
     <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
   </header>
@@ -96,7 +130,7 @@
   <footer>
     <p>Email: franmun2025@gmail.com</p>
     <p>Franciscan Sister's School Nazareth</p>
-    <p><a href="https://www.google.com/maps" target="_blank" style="color:#fff;">View Location on Google Maps</a></p>
+    <p><a href="https://www.google.com/maps" target="_blank">View Location on Google Maps</a></p>
     <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
   </footer>
 </body>
