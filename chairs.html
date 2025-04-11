@@ -1,125 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chairs Portal – FRANMUN</title>
+  <meta charset="UTF-8">
+  <title>Chair Registration | FRANMUN</title>
   <link rel="icon" type="image/png" href="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --main-blue: #00264d;
-      --accent-yellow: #ffcc00;
-      --bg-light: #f4f7fa;
-    }
-
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--bg-light);
-      color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      background-color: #e6f0ff;
       margin: 0;
-      padding: 40px 20px;
+      padding: 0;
+      color: #00264d;
     }
 
-    h2, h3 {
+    header {
+      background-color: #00264d;
+      color: white;
+      padding: 20px;
       text-align: center;
-      color: var(--main-blue);
     }
 
-    #login, #content {
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .container {
       max-width: 600px;
-      margin: 0 auto;
-      background: white;
+      background-color: white;
+      margin: 40px auto;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    input[type="password"], input[type="text"], input[type="email"], textarea, select {
+    h2 {
+      text-align: center;
+      color: #00264d;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0 20px;
+      padding: 10px;
+      margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      box-sizing: border-box;
-      font-size: 16px;
+      font-size: 14px;
     }
 
     button {
-      background-color: var(--accent-yellow);
+      background-color: #ffcc00;
       color: black;
       padding: 12px 20px;
+      margin-top: 20px;
       border: none;
       border-radius: 8px;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      width: 100%;
     }
 
     button:hover {
       background-color: #e6b800;
     }
 
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 10px;
-    }
-
-    #error {
-      color: red;
-      margin-top: 10px;
+    footer {
+      background-color: #00264d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <div id="login">
-    <h2>Chairs Login</h2>
-    <input type="password" id="password" placeholder="Enter Chair Password">
-    <button onclick="checkPassword()">Enter</button>
-    <p id="error"></p>
-  </div>
+  <header>
+    <h1>FRANMUN Chair Registration</h1>
+  </header>
 
-  <div id="content" style="display:none;">
-    <h3>Welcome, Chairs!</h3>
-    <p>Please fill out the registration form below:</p>
-
+  <div class="container">
+    <h2>Apply to be a Chair</h2>
     <form action="https://formsubmit.co/franmun2025@gmail.com" method="POST">
-      <label for="name">Full Name</label>
-      <input type="text" name="name" id="name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" name="email" id="email" required>
-
-      <label for="school">School Name</label>
-      <input type="text" name="school" id="school" required>
-
-      <label for="committee">Preferred Committee (if any)</label>
-      <input type="text" name="committee" id="committee">
-
-      <label for="experience">MUN Experience</label>
-      <textarea name="experience" id="experience" rows="4" placeholder="Briefly describe your MUN background..."></textarea>
-
+      <input type="hidden" name="_subject" value="New Chair Application">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
-      <button type="submit">Submit Registration</button>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="Full Name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="school">School</label>
+      <input type="text" id="school" name="School" required>
+
+      <label for="committee">Preferred Committee</label>
+      <input type="text" id="committee" name="Preferred Committee(s)" placeholder="e.g. DISEC, WHO, UNHRC" required>
+
+      <label for="experience">Previous MUN Experience</label>
+      <textarea id="experience" name="MUN Experience" rows="4" required></textarea>
+
+      <button type="submit">Submit Application</button>
     </form>
   </div>
 
-  <script>
-    function checkPassword() {
-      const correctPassword = "munchair2025";
-      const entered = document.getElementById("password").value;
-
-      if (entered === correctPassword) {
-        document.getElementById("login").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      } else {
-        document.getElementById("error").textContent = "Incorrect password. Try again.";
-      }
-    }
-  </script>
+  <footer>
+    <p>Email: franmun2025@gmail.com</p>
+    <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
