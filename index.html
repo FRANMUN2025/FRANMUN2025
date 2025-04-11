@@ -1,123 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FRANMUN | Franciscan Sisters School - Nazareth</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f4f8;
-      color: #1a1a1a;
-      text-align: center;
-    }
-
-    header {
-      background-color: #003366;
-      padding: 40px 20px;
-      color: white;
-    }
-
-    header img {
-      max-width: 120px;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      font-size: 2.8em;
-      margin: 10px 0;
-    }
-
-    header p {
-      font-size: 1.2em;
-    }
-
-    .buttons {
-      margin: 40px 0;
-    }
-
-    button {
-      font-size: 1.1em;
-      padding: 15px 30px;
-      margin: 10px;
-      background-color: #0055a5;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #003f7d;
-    }
-
-    #passwordSection {
-      margin-top: 20px;
-    }
-
-    input[type="password"] {
-      padding: 10px;
-      font-size: 1em;
-      width: 200px;
-      margin-top: 10px;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    footer {
-      padding: 20px;
-      background-color: #e8e8e8;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRANMUN 2025</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="FRANMUN Logo" class="logo">
+    </header>
 
-  <header>
-    <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="Franciscan Sisters School Logo" />
-    <h1>FRANMUN</h1>
-    <p>Hosted by the Franciscan Sisters' Secondary School, Nazareth</p>
-  </header>
+    <section class="thank-you">
+        <h1>Thank You for Joining FRANMUN 2025</h1>
+        <p>We look forward to seeing you at the conference. Here’s where it’s happening:</p>
+        <p><strong>Location:</strong> <a href="https://waze.com/ul/hsvc451xbt" target="_blank">Use Waze to drive to בי"ס נזירות הפרנציסקניות - مدرسة راهبات الفرنسيسكان, نצרת</a></p>
+    </section>
 
-  <div class="buttons">
-    <button onclick="goToDelegate()">I'm a Delegate</button>
-    <button onclick="showPassword()">I'm a Chair</button>
-  </div>
+    <section class="cta-buttons">
+        <a href="delegate.html" class="cta-button">I'm a Delegate</a>
+        <a href="chairs.html" class="cta-button" id="chairs-button">I'm a Chair</a>
+    </section>
 
-  <div id="passwordSection" class="hidden">
-    <p>Please enter the chair password:</p>
-    <input type="password" id="chairPassword" placeholder="Password" />
-    <button onclick="validatePassword()">Submit</button>
-  </div>
-
-  <footer>
-    &copy; 2025 FRANMUN — Franciscan Sisters' Secondary School, Nazareth
-  </footer>
-
-  <script>
-    function goToDelegate() {
-      window.location.href = "delegate.html";
-    }
-
-    function showPassword() {
-      document.getElementById("passwordSection").classList.remove("hidden");
-    }
-
-    function validatePassword() {
-      const password = document.getElementById("chairPassword").value;
-      const correctPassword = "yourChairPassword"; // change this securely!
-
-      if (password === correctPassword) {
-        window.location.href = "chairs.html";
-      } else {
-        alert("Incorrect password!");
-      }
-    }
-  </script>
-
+    <footer>
+        <p>Contact us at: <a href="mailto:franmun2025@gmail.com">franmun2025@gmail.com</a></p>
+    </footer>
 </body>
 </html>
