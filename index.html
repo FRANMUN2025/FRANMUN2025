@@ -1,157 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FRANMUN 2025</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(to right, #003366, #006699);
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      font-size: 3.5rem;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    header p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-    }
-    .button {
-      display: inline-block;
-      background-color: #ffcc00;
-      color: #000;
-      font-weight: bold;
-      padding: 14px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      margin: 10px;
-      font-size: 1.2rem;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .button:hover {
-      background-color: #e6a800;
-      transform: translateY(-5px);
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 30px;
-    }
-    footer a {
-      color: #ffcc00;
-      text-decoration: none;
-      transition: text-decoration 0.3s;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    .thank-you {
-      background-color: #ffffff;
-      padding: 40px;
-      border-radius: 15px;
-      margin-top: 40px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .thank-you h2 {
-      font-size: 2.5rem;
-      color: #003366;
-      text-align: center;
-    }
-    .thank-you p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      text-align: center;
-    }
-    .thank-you ul {
-      list-style-type: none;
-      padding: 0;
-      text-align: center;
-    }
-    .thank-you li {
-      font-size: 1.2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUN Conference</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            margin: 0;
+            color: #004080;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+        }
+        .main-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .main-content p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        
+        /* Buttons */
+        .btn {
+            background-color: #006bb3;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            display: inline-block;
+            margin: 15px;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #004080;
+            transform: translateY(-5px);
+        }
+
+        /* Form Container */
+        .form-container {
+            margin-top: 50px;
+            display: none;
+            text-align: center;
+        }
+        .form-container form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .form-container input[type="password"], .form-container input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #006bb3;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #004080;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 1em;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to FRANMUN 2025</h1>
-    <p>Franciscan Sister's School Model United Nations Conference</p>
-    <div>
-      <a href="delegate.html" class="button">I'm a Delegate</a>
-      <button class="button" onclick="showPasswordPrompt()">I'm a Chair</button>
+<header>
+    <div class="container">
+        <h1>MUN Conference 2025</h1>
+        <p>Location: [City Name], [Country]</p>
     </div>
+</header>
 
-    <div id="passwordPrompt" style="display:none; margin-top: 20px;">
-      <input type="password" id="passwordInput" placeholder="Enter Chair Password" style="padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-      <button class="button" onclick="checkPassword()">Submit</button>
-      <p id="error" style="color:red;"></p>
-    </div>
-  </header>
+<div class="container main-content">
+    <p>Thank you for joining us at the MUN Conference. Please select your role to proceed:</p>
+    <a href="#" class="btn" id="delegate-btn">I'm a Delegate</a>
+    <a href="#" class="btn" id="chair-btn">I'm a Chair</a>
+</div>
 
-  <!-- Thank You Section -->
-  <div class="thank-you">
-    <h2>Thank You</h2>
-    <p>We would like to take a moment to express our deepest appreciation to the people who have supported and encouraged us throughout our MUN journey. Their guidance, dedication, and belief in us have played a vital role in helping us grow, learn, and participate in this incredible experience.</p>
-    
-    <h3>Sister Filippa Arraf</h3>
-    <p>As our school’s principal, Sister Filippa Arraf has been one of the key reasons we are able to take part in MUN. Her encouragement and support for student leadership and global awareness have truly inspired us to aim higher and step into the world of diplomacy and public speaking.</p>
-    
-    <h3>Our English Teachers</h3>
-    <p>We are extremely grateful to our amazing English teachers, who have helped us develop the skills we need to succeed in MUN — from writing and research to speaking with confidence. Thank you for your constant support and dedication:</p>
-    <ul>
-      <li>Amal Shamshoum</li>
-      <li>Hazar Saad Kanazi</li>
-      <li>Heba Ewayed-Banna</li>
-      <li>Muna Abu-Salemy</li>
-      <li>Rina Mazzawi Marjieh</li>
-      <li>Rose Jabaley</li>
-    </ul>
-    
-    <h3>Maria Faranesh</h3>
-    <p>To our incredible MUN advisor, Maria Faranesh — thank you for being our mentor, guide, and biggest supporter. Your dedication, enthusiasm, and belief in us have made all the difference. We couldn’t have done it without you.</p>
-  </div>
+<div class="container form-container" id="chair-form-container">
+    <form id="chair-form">
+        <label for="password">Enter Chair Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>
 
-  <footer>
-    <p>Email: franmun2025@gmail.com</p>
-    <p>Franciscan Sister's School Nazareth</p>
-    <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank">View Location</a></p>
-    <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
-  </footer>
+<footer>
+    <p>&copy; 2025 MUN Conference | All Rights Reserved</p>
+</footer>
 
-  <script>
-    // Function to show the password prompt for chairs
-    function showPasswordPrompt() {
-      document.getElementById("passwordPrompt").style.display = "block"; // Show password prompt
-    }
+<script>
+    const chairButton = document.getElementById('chair-btn');
+    const delegateButton = document.getElementById('delegate-btn');
+    const chairFormContainer = document.getElementById('chair-form-container');
+    const chairForm = document.getElementById('chair-form');
 
-    // Check if the entered password matches the correct one
-    function checkPassword() {
-      const correctPassword = "munchair2025"; // The correct password for chairs
-      const enteredPassword = document.getElementById("passwordInput").value;
+    // Delegate button redirects
+    delegateButton.addEventListener('click', () => {
+        window.location.href = 'delegate.html'; // Replace with your delegate page link
+    });
 
-      if (enteredPassword === correctPassword) {
-        sessionStorage.setItem("isChairAuthenticated", "true"); // Store successful login
-        window.location.href = "chairs.html"; // Redirect to chairs page
-      } else {
-        document.getElementById("error").textContent = "Incorrect password."; // Show error message for wrong password
-      }
-    }
-  </script>
+    // Chair button shows password form
+    chairButton.addEventListener('click', () => {
+        chairFormContainer.style.display = 'block';
+    });
+
+    // Chair password form submission
+    chairForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const password = document.getElementById('password').value;
+        const correctPassword = 'yourChairPassword'; // Replace with your actual chair password
+
+        if (password === correctPassword) {
+            window.location.href = 'chairs.html'; // Replace with your chairs page link
+        } else {
+            alert('Incorrect password!');
+        }
+    });
+</script>
 
 </body>
 </html>
