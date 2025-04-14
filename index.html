@@ -52,12 +52,8 @@
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
-      margin: 10px 5px;
+      margin: 20px 0;
       cursor: pointer;
-    }
-
-    .button:hover {
-      background-color: #e6b800;
     }
 
     footer {
@@ -68,6 +64,7 @@
       font-size: 14px;
     }
 
+    /* Chair button */
     .top-right-button {
       position: absolute;
       top: 20px;
@@ -87,6 +84,37 @@
 
     .top-right-button a:hover {
       background-color: #e6b800;
+    }
+
+    /* Modal Styles */
+    #committeeModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #committeeModal .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+    }
+
+    #committeeModal .modal-content span {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 20px;
     }
   </style>
 </head>
@@ -130,11 +158,11 @@
       <h3>Committees</h3>
       <p>Click a committee to learn more about the topic and download the study guide.</p>
 
-      <a href="committees/unwomen.html" class="button">UN Women</a><br>
-      <a href="committees/unhrc.html" class="button">UNHRC</a><br>
-      <a href="committees/disec.html" class="button">DISEC</a><br>
-      <a href="committees/unhsc.html" class="button">UNHSC</a><br>
-      <a href="committees/crisis.html" class="button">Crisis Committee</a>
+      <button class="button" onclick="openModal('unwomen')">UN Women</button>
+      <button class="button" onclick="openModal('unhrc')">UNHRC</button>
+      <button class="button" onclick="openModal('disec')">DISEC</button>
+      <button class="button" onclick="openModal('unhsc')">UNHSC</button>
+      <button class="button" onclick="openModal('crisis')">Crisis Committee</button>
     </div>
 
     <div class="card">
@@ -160,12 +188,71 @@
     </div>
   </div>
 
+  <!-- Modal for Committee Details -->
+  <div id="committeeModal" style="display:none;">
+    <div class="modal-content">
+      <span onclick="closeModal()">×</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
   <footer>
     <p>Email: franmun2025@gmail.com</p>
     <p>Franciscan Sister's School Nazareth</p>
     <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
     <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
   </footer>
+
+  <script>
+    const committeeData = {
+      unwomen: {
+        title: "UN Women",
+        description: "United Nations Entity for Gender Equality and the Empowerment of Women.",
+        topic: "Empowering Women in Post-Conflict Zones",
+        guide: "#"
+      },
+      unhrc: {
+        title: "UNHRC",
+        description: "United Nations Human Rights Council.",
+        topic: "Protecting Freedom of Speech in Digital Spaces",
+        guide: "#"
+      },
+      disec: {
+        title: "DISEC",
+        description: "Disarmament and International Security Committee.",
+        topic: "Nuclear Disarmament in the 21st Century",
+        guide: "#"
+      },
+      unhsc: {
+        title: "UNHSC",
+        description: "United Nations Historical Security Council.",
+        topic: "The Cuban Missile Crisis – 1962",
+        guide: "#"
+      },
+      crisis: {
+        title: "Crisis Committee",
+        description: "A fast-paced and dynamic committee with real-time developments.",
+        topic: "Surprise Scenario – Will You Adapt?",
+        guide: "#"
+      }
+    };
+
+    function openModal(key) {
+      const data = committeeData[key];
+      const content = `
+        <h2>${data.title}</h2>
+        <p><strong>Description:</strong> ${data.description}</p>
+        <p><strong>Topic:</strong> ${data.topic}</p>
+        <p><strong>Study Guide:</strong> <a href="${data.guide}" target="_blank">Download</a></p>
+      `;
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('committeeModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('committeeModal').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
