@@ -52,7 +52,7 @@
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
-      margin: 20px 0;
+      margin: 10px;
       cursor: pointer;
     }
 
@@ -94,7 +94,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       z-index: 10000;
       justify-content: center;
       align-items: center;
@@ -104,17 +104,20 @@
       background: white;
       padding: 30px;
       border-radius: 12px;
-      max-width: 600px;
+      max-width: 400px;
       width: 90%;
+      text-align: center;
       position: relative;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     #committeeModal .modal-content span {
       position: absolute;
       top: 10px;
-      right: 20px;
+      right: 16px;
       cursor: pointer;
-      font-size: 20px;
+      font-size: 22px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -156,13 +159,12 @@
 
     <div class="card">
       <h3>Committees</h3>
-      <p>Click a committee to learn more about the topic and download the study guide.</p>
-
-      <button class="button" onclick="openModal('unwomen')">UN Women</button>
-      <button class="button" onclick="openModal('unhrc')">UNHRC</button>
-      <button class="button" onclick="openModal('disec')">DISEC</button>
-      <button class="button" onclick="openModal('unhsc')">UNHSC</button>
-      <button class="button" onclick="openModal('crisis')">Crisis Committee</button>
+      <p>Click a committee to see what's coming.</p>
+      <button class="button" onclick="openModal('UNWOMEN')">UNWOMEN</button>
+      <button class="button" onclick="openModal('UNHRC')">UNHRC</button>
+      <button class="button" onclick="openModal('DISEC')">DISEC</button>
+      <button class="button" onclick="openModal('UNHSC')">UNHSC</button>
+      <button class="button" onclick="openModal('Crisis')">Crisis</button>
     </div>
 
     <div class="card">
@@ -188,11 +190,13 @@
     </div>
   </div>
 
-  <!-- Modal for Committee Details -->
-  <div id="committeeModal" style="display:none;">
+  <!-- Modal -->
+  <div id="committeeModal">
     <div class="modal-content">
       <span onclick="closeModal()">×</span>
-      <div id="modalContent"></div>
+      <h2 id="modalTitle">Committee Name</h2>
+      <p><strong>Information:</strong></p>
+      <p>Coming Soon</p>
     </div>
   </div>
 
@@ -204,48 +208,8 @@
   </footer>
 
   <script>
-    const committeeData = {
-      unwomen: {
-        title: "UN Women",
-        description: "United Nations Entity for Gender Equality and the Empowerment of Women.",
-        topic: "Empowering Women in Post-Conflict Zones",
-        guide: "#"
-      },
-      unhrc: {
-        title: "UNHRC",
-        description: "United Nations Human Rights Council.",
-        topic: "Protecting Freedom of Speech in Digital Spaces",
-        guide: "#"
-      },
-      disec: {
-        title: "DISEC",
-        description: "Disarmament and International Security Committee.",
-        topic: "Nuclear Disarmament in the 21st Century",
-        guide: "#"
-      },
-      unhsc: {
-        title: "UNHSC",
-        description: "United Nations Historical Security Council.",
-        topic: "The Cuban Missile Crisis – 1962",
-        guide: "#"
-      },
-      crisis: {
-        title: "Crisis Committee",
-        description: "A fast-paced and dynamic committee with real-time developments.",
-        topic: "Surprise Scenario – Will You Adapt?",
-        guide: "#"
-      }
-    };
-
-    function openModal(key) {
-      const data = committeeData[key];
-      const content = `
-        <h2>${data.title}</h2>
-        <p><strong>Description:</strong> ${data.description}</p>
-        <p><strong>Topic:</strong> ${data.topic}</p>
-        <p><strong>Study Guide:</strong> <a href="${data.guide}" target="_blank">Download</a></p>
-      `;
-      document.getElementById('modalContent').innerHTML = content;
+    function openModal(committeeName) {
+      document.getElementById('modalTitle').textContent = committeeName;
       document.getElementById('committeeModal').style.display = 'flex';
     }
 
