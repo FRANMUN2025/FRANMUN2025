@@ -253,70 +253,27 @@
 
       <h3>Maria Faranesh</h3>
       <p>To our incredible MUN advisor, Maria Faranesh — thank you for being our mentor, guide, and biggest supporter. Your dedication, enthusiasm, and belief in us have made all the difference. We couldn’t have done it without you.</p>
-    </div
+    </div>
+  </div>
 
-The edits I made to mark the committee icons as buttons are primarily within the **CSS section** and **HTML structure**. Here’s a breakdown of the changes:
+  <div id="committeeModal">
+    <div class="modal-content">
+      <span onclick="closeModal()">×</span>
+      <h2 id="modalTitle">Committee Name</h2>
+      <p id="modalDescription">This is where the committee details will be shown.</p>
+    </div>
+  </div>
 
-### **CSS Edits**
-- **Lines 43–59 (Committee Icon Styles)**
-  - Added the hover effect, including border, background color change, and transition effects:
-    ```css
-    .committee-icon {
-      width: 120px;
-      height: 120px;
-      cursor: pointer;
-      transition: transform 0.3s, filter 0.3s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
-      border-radius: 12px;
-      border: 2px solid transparent;  /* Invisible border for default state */
+  <script>
+    function openModal(committee) {
+      document.getElementById("committeeModal").style.display = "flex";
+      document.getElementById("modalTitle").innerText = committee;
+      document.getElementById("modalDescription").innerText = "Details for " + committee + " committee will go here.";
     }
 
-    .committee-icon:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 10px rgba(0, 64, 128, 0.5));
-      box-shadow: 0 0 15px 5px rgba(255, 204, 0, 0.8);
-      border: 2px solid #ffd700;  /* Yellow border on hover */
-      background-color: rgba(0, 64, 128, 0.1);  /* Subtle background color change */
+    function closeModal() {
+      document.getElementById("committeeModal").style.display = "none";
     }
-
-    .committee-icon img {
-      max-width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 12px;
-    }
-    ```
-
-### **Explanation of Changes:**
-- **Cursor:** `cursor: pointer;` makes the icons appear clickable (as buttons).
-- **Hover Effect:** The `hover` class applies a yellow border and subtle background color change when users hover over the icons.
-- **Box Shadow:** A glowing effect is added to enhance the button-like visual.
-
-### **HTML Edits**
-- **Lines 101–105 (Committee Icons in HTML)**: The icons are now wrapped with the `.committee-icon` class, and the `onclick` event triggers the modal for each committee.
-    ```html
-    <div class="committee-icon" onclick="openModal('UNWOMEN')">
-      <img src="unwomen.png" alt="UNWOMEN Icon" />
-    </div>
-
-    <div class="committee-icon" onclick="openModal('UNHRC')">
-      <img src="unhrc.png" alt="UNHRC Icon" />
-    </div>
-
-    <div class="committee-icon" onclick="openModal('DISEC')">
-      <img src="disec.png" alt="DISEC Icon" />
-    </div>
-
-    <div class="committee-icon" onclick="openModal('UNHSC')">
-      <img src="unhsc.png" alt="UNHSC Icon" />
-    </div>
-
-    <div class="committee-icon" onclick="openModal('CRISIS')">
-      <img src="crisis.png" alt="CRISIS Icon" />
-    </div>
-    ```
-
-In summary:
-- **CSS:** Changes were made to the `.committee-icon` class and the `:hover` effect to visually mark the icons as buttons.
-- **HTML:** The `committee-icon` class was added to each committee div containing the icon.
-
-This change ensures that users can visually identify the committee icons as buttons with hover effects.
+  </script>
+</body>
+</html>
