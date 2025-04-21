@@ -270,25 +270,27 @@
       document.getElementById("modalDescription").innerText = "Details for " + committee + " committee will go here.";
     }
 
-      <script>
-    function openModal(committee) {
-      document.getElementById("committeeModal").style.display = "flex";
-      document.getElementById("modalTitle").innerText = committee;
-      document.getElementById("modalDescription").innerText = "Details for " + committee + " committee will go here.";
-    }
-
     function closeModal() {
       document.getElementById("committeeModal").style.display = "none";
     }
   </script>
 
   <footer>
-    <p><strong>Location:</strong> 
-      <a href="https://ul.waze.com/ul?ll=32.70368,35.29867&navigate=yes" target="_blank" style="color: #ffd700;">
-        Use Waze to drive to בי"ס نזירות הפרנצيسקניות - مدرسة راهبات الفرنسيسكان, نצרת
-      </a>
-    </p>
-    <p><strong>Contact us:</strong> <a href="mailto:franmun2025@gmail.com" style="color: #ffd700;">franmun2025@gmail.com</a></p>
+   <footer>
+    <p>Email: <a href="mailto:franmun2025@gmail.com" style="color: #ffd700;">franmun2025@gmail.com</a></p>
+    <p>Franciscan Sister's School Nazareth</p>
+    <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
+    <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openModal(committeeName) {
+      document.getElementById('modalTitle').textContent = committeeName;
+      document.getElementById('committeeModal').style.display = 'flex';
+    }
+  </footer>
+    function closeModal() {
+      document.getElementById('committeeModal').style.display = 'none';
   </footer>
 </body>
 </html>
