@@ -7,138 +7,97 @@
   <link rel="icon" type="image/png" href="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f2f6fc;
-      color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      background-color: #e6f0ff;
+      color: #00264d;
       margin: 0;
       padding: 0;
     }
 
-    /* Header & Navigation */
     header {
+      background-color: #00264d;
+      color: white;
+      padding: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    header img {
+      max-width: 80px;
+      height: auto;
+    }
+
+    .header-text {
+      text-align: center;
+      flex: 1;
+      margin-left: -80px; /* Adjust to center text while logo is on the left */
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .highlight {
+      color: #ffd700;
+    }
+
+    .section { 
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card {
+      background-color: white;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    footer {
       background-color: #00264d;
       color: white;
-      padding: 15px 30px;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-    }
-
-    .header-left img {
-      max-width: 50px;
-      margin-right: 15px;
-    }
-
-    .header-left h1 {
-      font-size: 20px;
-      margin: 0;
-      line-height: 1.2;
-    }
-
-    .header-left span {
-      font-weight: bold;
-      color: #ffcc00;
+    .top-right-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
     }
 
     .top-right-button a {
       background-color: #ffcc00;
       color: #000;
-      padding: 10px 18px;
-      border-radius: 6px;
+      padding: 10px 16px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
       font-size: 14px;
-      transition: background-color 0.3s;
     }
 
     .top-right-button a:hover {
       background-color: #e6b800;
     }
 
-    /* Main Content */
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 30px;
-      color: #00264d;
-      margin-bottom: 10px;
-    }
-
-    .section p {
-      font-size: 18px;
-      color: #333;
-    }
-
-    .card {
-      background-color: white;
-      margin: 20px auto;
-      padding: 30px;
-      border-radius: 16px;
-      max-width: 800px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    }
-
-    .button {
-      display: inline-block;
-      background-color: #004080;
-      color: white;
-      font-weight: bold;
-      padding: 12px 26px;
-      border-radius: 10px;
-      text-decoration: none;
-      margin: 15px auto;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-
-    .button:hover {
-      background-color: #00264d;
-    }
-
-    /* Committees */
-    .committee-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-      padding: 20px;
-    }
-
-    .committee-icon {
-      background-color: white;
-      border-radius: 16px;
-      padding: 25px;
-      width: 120px;
-      height: 120px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .committee-icon:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .committee-icon img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Modal */
     #committeeModal {
       display: none;
       position: fixed;
@@ -155,7 +114,7 @@
     #committeeModal .modal-content {
       background: white;
       padding: 30px;
-      border-radius: 16px;
+      border-radius: 12px;
       max-width: 400px;
       width: 90%;
       text-align: center;
@@ -172,97 +131,119 @@
       font-weight: bold;
     }
 
-    footer {
-      background-color: #00264d;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
+    .committee-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      padding: 20px;
     }
 
-    footer a {
-      color: #ffcc00;
-      text-decoration: none;
+    .committee-icon {
+      width: 120px;
+      height: 120px;
+      cursor: pointer;
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .committee-icon:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 64, 128, 0.5));
+    }
+
+    .committee-icon img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-left">
-      <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="FRANMUN Logo">
-      <h1><span>FRANMUN</span><br>Franciscan Sister’s School MUN</h1>
+  <div class="top-right-button">
+    <a href="chairs.html">Chair Registration</a>
+  </div>
+
+  <div id="delegateContent">
+    <header>
+      <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="School Logo">
+      <div class="header-text">
+        <h1>Franciscan Sister's School MUN</h1>
+        <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>FRANMUN</h2>
+      <p>Franciscan Sister's School's First Model United Nations Conference</p>
+    </section>
+
+    <div class="card">
+      <h3>Coming Soon!</h3>
+      <p>We're excited to announce our first MUN conference.</p>
+      <p>Stay tuned for updates!</p>
     </div>
-    <div class="top-right-button">
-      <a href="chairs.html">Chair Registration</a>
+
+    <div style="text-align:center;">
+      <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
+      <p>Registration includes a parent/guardian signature requirement</p>
     </div>
-  </header>
 
-  <section class="section">
-    <h2>FRANMUN</h2>
-    <p>Franciscan Sister's School's First Model United Nations Conference</p>
-  </section>
+    <div class="card">
+      <h3>About Our Conference</h3>
+      <p>Welcome to Franciscan Sister's School's inaugural Model United Nations conference! Join us for an exciting event where students will engage in diplomatic discussions, problem-solving, and resolution writing while representing countries from around the world.</p>
+    </div>
 
-  <div class="card">
-    <h3>Coming Soon!</h3>
-    <p>We're excited to announce our first MUN conference. Stay tuned for updates!</p>
-  </div>
+    <div class="card">
+      <h3>Committees</h3>
 
-  <div style="text-align:center;">
-    <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
-    <p>Registration includes a parent/guardian signature requirement</p>
-  </div>
+      <div class="committee-grid">
+        <div class="committee-icon" onclick="openModal('UNWOMEN')">
+          <img src="unwomen.png" alt="UNWOMEN Icon" />
+        </div>
 
-  <div class="card">
-    <h3>About Our Conference</h3>
-    <p>Welcome to Franciscan Sister's School's inaugural Model United Nations conference! Join us for an exciting event where students will engage in diplomatic discussions, problem-solving, and resolution writing while representing countries from around the world.</p>
-  </div>
+        <div class="committee-icon" onclick="openModal('UNHRC')">
+          <img src="unhrc.png" alt="UNHRC Icon" />
+        </div>
 
-  <div class="card">
-    <h3>Committees</h3>
-    <div class="committee-grid">
-      <div class="committee-icon" onclick="openModal('UNWOMEN')">
-        <img src="unwomen.png" alt="UNWOMEN Icon" />
-      </div>
-      <div class="committee-icon" onclick="openModal('UNHRC')">
-        <img src="unhrc.png" alt="UNHRC Icon" />
-      </div>
-      <div class="committee-icon" onclick="openModal('DISEC')">
-        <img src="disec.png" alt="DISEC Icon" />
-      </div>
-      <div class="committee-icon" onclick="openModal('UNHSC')">
-        <img src="unhsc.png" alt="UNHSC Icon" />
-      </div>
-      <div class="committee-icon" onclick="openModal('CRISIS')">
-        <img src="crisis.png" alt="CRISIS Icon" />
+        <div class="committee-icon" onclick="openModal('DISEC')">
+          <img src="disec.png" alt="DISEC Icon" />
+        </div>
+
+        <div class="committee-icon" onclick="openModal('UNHSC')">
+          <img src="unhsc.png" alt="UNHSC Icon" />
+        </div>
+
+        <div class="committee-icon" onclick="openModal('CRISIS')">
+          <img src="crisis.png" alt="CRISIS Icon" />
+        </div>
       </div>
     </div>
+
+    <div class="card">
+      <h2>Thank You</h2>
+      <p>We would like to take a moment to express our deepest appreciation to the people who have supported and encouraged us throughout our MUN journey.</p>
+
+      <h3>Sister Filippa Arraf</h3>
+      <p>As our school’s principal, Sister Filippa Arraf has been one of the key reasons we are able to take part in MUN. Her encouragement and support for student leadership and global awareness have truly inspired us to aim higher and step into the world of diplomacy and public speaking.</p>
+
+      <h3>Our English Teachers</h3>
+      <p>We are extremely grateful to our amazing English teachers, who have helped us develop the skills we need to succeed in MUN — from writing and research to speaking with confidence. Thank you for your constant support and dedication:</p>
+      <ul style="list-style-type: none; padding: 0;">
+        <li>Amal Shamshoum</li>
+        <li>Hazar Saad Kanazi</li>
+        <li>Heba Ewayed-Banna</li>
+        <li>Muna Abu-Salemy</li>
+        <li>Rina Mazzawi Marjieh</li>
+        <li>Rose Jabaley</li>
+      </ul>
+
+      <h3>Maria Faranesh</h3>
+      <p>To our incredible MUN advisor, Maria Faranesh — thank you for being our mentor, guide, and biggest supporter. Your dedication, enthusiasm, and belief in us have made all the difference. We couldn’t have done it without you.</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Thank You</h2>
-    <p>We would like to express our appreciation to the people who have supported and encouraged us throughout our MUN journey.</p>
-
-    <h3>Sister Filippa Arraf</h3>
-    <p>As our school’s principal, her support and encouragement have helped make this possible.</p>
-
-    <h3>Our English Teachers</h3>
-    <p>Thank you for helping us grow our skills and confidence:</p>
-    <ul style="list-style-type: none; padding: 0;">
-      <li>Amal Shamshoum</li>
-      <li>Hazar Saad Kanazi</li>
-      <li>Heba Ewayed-Banna</li>
-      <li>Muna Abu-Salemy</li>
-      <li>Rina Mazzawi Marjieh</li>
-      <li>Rose Jabaley</li>
-    </ul>
-
-    <h3>Maria Faranesh</h3>
-    <p>To our MUN advisor — thank you for your guidance, support, and belief in us.</p>
-  </div>
-
-  <!-- Modal -->
   <div id="committeeModal">
     <div class="modal-content">
       <span onclick="closeModal()">×</span>
@@ -273,10 +254,10 @@
   </div>
 
   <footer>
-    <p>Email: <a href="mailto:franmun2025@gmail.com">franmun2025@gmail.com</a></p>
-    <p>Franciscan Sister's School, Nazareth</p>
-    <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank">View Location</a></p>
-    <p>&copy; 2025 FRANMUN. All rights reserved.</p>
+    <p>Email: franmun2025@gmail.com</p>
+    <p>Franciscan Sister's School Nazareth</p>
+    <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
+    <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
   </footer>
 
   <script>
