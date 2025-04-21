@@ -11,14 +11,15 @@
       margin: 0;
       padding: 0;
       background-image: url('franmun-bg.jpg');
-      background-size: 120%; /* Zoom out the background */
+      background-size: 110%;
       background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #00264d;
     }
 
     header {
-      background-color: rgba(0, 38, 77, 0.95); /* Darken the blue */
+      background-color: rgba(0, 25, 51, 0.9);
       color: white;
       padding: 20px;
       display: flex;
@@ -76,7 +77,7 @@
     }
 
     footer {
-      background-color: rgba(0, 38, 77, 0.9);
+      background-color: rgba(0, 25, 51, 0.95);
       color: white;
       text-align: center;
       padding: 20px;
@@ -151,6 +152,13 @@
       height: 120px;
       cursor: pointer;
       transition: transform 0.3s, filter 0.3s;
+      background-color: white;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .committee-icon:hover {
@@ -160,7 +168,7 @@
 
     .committee-icon img {
       max-width: 100%;
-      height: 100%;
+      max-height: 100%;
       object-fit: contain;
     }
   </style>
@@ -260,7 +268,7 @@
   </div>
 
   <footer>
-    <p>Email: franmun2025@gmail.com</p>
+    <p>Email: <a href="mailto:franmun2025@gmail.com" style="color: #fff;">franmun2025@gmail.com</a></p>
     <p>Franciscan Sister's School Nazareth</p>
     <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
     <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
