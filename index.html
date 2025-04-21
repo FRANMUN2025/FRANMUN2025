@@ -152,21 +152,24 @@
       cursor: pointer;
       transition: transform 0.3s, filter 0.3s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
       border-radius: 12px;
-      border: 2px solid transparent;  /* Invisible border for default state */
+      border: 2px solid transparent;
     }
 
     .committee-icon:hover {
       transform: scale(1.1);
       filter: drop-shadow(0 0 10px rgba(0, 64, 128, 0.5));
       box-shadow: 0 0 15px 5px rgba(255, 204, 0, 0.8);
-      border: 2px solid #ffd700;  /* Yellow border on hover */
-      background-color: rgba(0, 64, 128, 0.1);  /* Subtle background color change */
+      border: 2px solid #ffd700;
+      background-color: rgba(0, 64, 128, 0.1);
     }
 
     .committee-icon img {
-      max-width: 100%;
+      width: 100%;
       height: 100%;
       object-fit: contain;
+      padding: 10px;
+      background-color: white;
+      box-sizing: border-box;
       border-radius: 12px;
     }
   </style>
@@ -199,7 +202,7 @@
 
     <div style="text-align:center;">
       <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
-      <p>Registration includes a parent/guardian signature requirement</p>
+      <p style="color:#00264d;">Registration includes a parent/guardian signature requirement</p>
     </div>
 
     <div class="card">
@@ -214,19 +217,15 @@
         <div class="committee-icon" onclick="openModal('UNWOMEN')">
           <img src="unwomen.png" alt="UNWOMEN Icon" />
         </div>
-
         <div class="committee-icon" onclick="openModal('UNHRC')">
           <img src="unhrc.png" alt="UNHRC Icon" />
         </div>
-
         <div class="committee-icon" onclick="openModal('DISEC')">
           <img src="disec.png" alt="DISEC Icon" />
         </div>
-
         <div class="committee-icon" onclick="openModal('UNHSC')">
           <img src="unhsc.png" alt="UNHSC Icon" />
         </div>
-
         <div class="committee-icon" onclick="openModal('CRISIS')">
           <img src="crisis.png" alt="CRISIS Icon" />
         </div>
@@ -271,9 +270,25 @@
       document.getElementById("modalDescription").innerText = "Details for " + committee + " committee will go here.";
     }
 
+      <script>
+    function openModal(committee) {
+      document.getElementById("committeeModal").style.display = "flex";
+      document.getElementById("modalTitle").innerText = committee;
+      document.getElementById("modalDescription").innerText = "Details for " + committee + " committee will go here.";
+    }
+
     function closeModal() {
       document.getElementById("committeeModal").style.display = "none";
     }
   </script>
+
+  <footer>
+    <p><strong>Location:</strong> 
+      <a href="https://ul.waze.com/ul?ll=32.70368,35.29867&navigate=yes" target="_blank" style="color: #ffd700;">
+        Use Waze to drive to בי"ס نזירות הפרנצيسקניות - مدرسة راهبات الفرنسيسكان, نצרת
+      </a>
+    </p>
+    <p><strong>Contact us:</strong> <a href="mailto:franmun2025@gmail.com" style="color: #ffd700;">franmun2025@gmail.com</a></p>
+  </footer>
 </body>
 </html>
