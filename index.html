@@ -30,7 +30,7 @@
       color: #ffd700;
     }
 
-    .section {
+    .section { 
       padding: 30px;
       text-align: center;
     }
@@ -40,7 +40,7 @@
       margin: 20px auto;
       padding: 20px;
       border-radius: 12px;
-      max-width: 700px;
+      max-width: 800px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
@@ -122,16 +122,20 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
+      gap: 40px;
+      margin-top: 30px;
+      padding: 20px;
     }
 
     .committee-icon {
       background-color: white;
       border-radius: 12px;
-      padding: 20px;
-      width: 120px;
-      text-align: center;
+      padding: 25px;
+      width: 130px;
+      height: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       cursor: pointer;
       transition: transform 0.2s;
@@ -143,87 +147,92 @@
     }
 
     .committee-icon img {
-      width: 60px;
-      height: 60px;
+      max-width: 100%;
+      height: auto;
     }
   </style>
 </head>
 <body>
 
+  <!-- Chair button -->
   <div class="top-right-button">
     <a href="chairs.html">Chair Registration</a>
   </div>
 
-  <header>
-    <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="School Logo" style="max-width: 150px; margin-bottom: 10px;">
-    <h1>Franciscan Sister's School MUN</h1>
-    <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
-  </header>
+  <!-- Main Content -->
+  <div id="delegateContent">
+    <header>
+      <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="School Logo" style="max-width: 150px; margin-bottom: 10px;">
+      <h1>Franciscan Sister's School MUN</h1>
+      <p><span class="highlight">FRANMUN</span> | First Annual Conference</p>
+    </header>
 
-  <section class="section">
-    <h2>FRANMUN</h2>
-    <p>Franciscan Sister's School's First Model United Nations Conference</p>
-  </section>
+    <section class="section">
+      <h2>FRANMUN</h2>
+      <p>Franciscan Sister's School's First Model United Nations Conference</p>
+    </section>
 
-  <div class="card">
-    <h3>Coming Soon!</h3>
-    <p>We're excited to announce our first MUN conference.</p>
-    <p>Stay tuned for updates!</p>
-  </div>
+    <div class="card">
+      <h3>Coming Soon!</h3>
+      <p>We're excited to announce our first MUN conference.</p>
+      <p>Stay tuned for updates!</p>
+    </div>
 
-  <div style="text-align:center;">
-    <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
-    <p>Registration includes a parent/guardian signature requirement</p>
-  </div>
+    <div style="text-align:center;">
+      <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
+      <p>Registration includes a parent/guardian signature requirement</p>
+    </div>
 
-  <div class="card">
-    <h3>About Our Conference</h3>
-    <p>Welcome to Franciscan Sister's School's inaugural Model United Nations conference! Join us for an exciting event where students will engage in diplomatic discussions, problem-solving, and resolution writing while representing countries from around the world.</p>
-  </div>
+    <div class="card">
+      <h3>About Our Conference</h3>
+      <p>Welcome to Franciscan Sister's School's inaugural Model United Nations conference! Join us for an exciting event where students will engage in diplomatic discussions, problem-solving, and resolution writing while representing countries from around the world.</p>
+    </div>
 
-  <div class="card">
-    <h3>Committees</h3>
-    <div class="committee-grid">
-      <div class="committee-icon" onclick="openModal('UNWOMEN')">
-        <img src="unwomen.png" alt="UNWOMEN Icon" />
+    <div class="card">
+      <h3>Committees</h3>
+      <div class="committee-grid">
+        <div class="committee-icon" onclick="openModal('UNWOMEN')">
+          <img src="unwomen.png" alt="UNWOMEN Icon" />
+        </div>
+        <div class="committee-icon" onclick="openModal('UNHRC')">
+          <img src="unhrc.png" alt="UNHRC Icon" />
+        </div>
+        <div class="committee-icon" onclick="openModal('DISEC')">
+          <img src="disec.png" alt="DISEC Icon" />
+        </div>
+        <div class="committee-icon" onclick="openModal('UNHSC')">
+          <img src="unhsc.png" alt="UNHSC Icon" />
+        </div>
+        <div class="committee-icon" onclick="openModal('CRISIS')">
+          <img src="crisis.png" alt="CRISIS Icon" />
+        </div>
       </div>
-      <div class="committee-icon" onclick="openModal('UNHRC')">
-        <img src="unhrc.png" alt="UNHRC Icon" />
-      </div>
-      <div class="committee-icon" onclick="openModal('DISEC')">
-        <img src="disec.png" alt="DISEC Icon" />
-      </div>
-      <div class="committee-icon" onclick="openModal('UNHSC')">
-        <img src="unhsc.png" alt="UNHSC Icon" />
-      </div>
-      <div class="committee-icon" onclick="openModal('CRISIS')">
-        <img src="crisis.png" alt="CRISIS Icon" />
-      </div>
+    </div>
+
+    <div class="card">
+      <h2>Thank You</h2>
+      <p>We would like to take a moment to express our deepest appreciation to the people who have supported and encouraged us throughout our MUN journey. Their guidance, dedication, and belief in us have played a vital role in helping us grow, learn, and participate in this incredible experience.</p>
+
+      <h3>Sister Filippa Arraf</h3>
+      <p>As our school’s principal, Sister Filippa Arraf has been one of the key reasons we are able to take part in MUN. Her encouragement and support for student leadership and global awareness have truly inspired us to aim higher and step into the world of diplomacy and public speaking.</p>
+
+      <h3>Our English Teachers</h3>
+      <p>We are extremely grateful to our amazing English teachers, who have helped us develop the skills we need to succeed in MUN — from writing and research to speaking with confidence. Thank you for your constant support and dedication:</p>
+      <ul style="list-style-type: none; padding: 0;">
+        <li>Amal Shamshoum</li>
+        <li>Hazar Saad Kanazi</li>
+        <li>Heba Ewayed-Banna</li>
+        <li>Muna Abu-Salemy</li>
+        <li>Rina Mazzawi Marjieh</li>
+        <li>Rose Jabaley</li>
+      </ul>
+
+      <h3>Maria Faranesh</h3>
+      <p>To our incredible MUN advisor, Maria Faranesh — thank you for being our mentor, guide, and biggest supporter. Your dedication, enthusiasm, and belief in us have made all the difference. We couldn’t have done it without you.</p>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Thank You</h2>
-    <p>We would like to take a moment to express our deepest appreciation to the people who have supported and encouraged us throughout our MUN journey. Their guidance, dedication, and belief in us have played a vital role in helping us grow, learn, and participate in this incredible experience.</p>
-
-    <h3>Sister Filippa Arraf</h3>
-    <p>As our school’s principal, Sister Filippa Arraf has been one of the key reasons we are able to take part in MUN. Her encouragement and support for student leadership and global awareness have truly inspired us to aim higher and step into the world of diplomacy and public speaking.</p>
-
-    <h3>Our English Teachers</h3>
-    <p>We are extremely grateful to our amazing English teachers, who have helped us develop the skills we need to succeed in MUN — from writing and research to speaking with confidence. Thank you for your constant support and dedication:</p>
-    <ul style="list-style-type: none; padding: 0;">
-      <li>Amal Shamshoum</li>
-      <li>Hazar Saad Kanazi</li>
-      <li>Heba Ewayed-Banna</li>
-      <li>Muna Abu-Salemy</li>
-      <li>Rina Mazzawi Marjieh</li>
-      <li>Rose Jabaley</li>
-    </ul>
-
-    <h3>Maria Faranesh</h3>
-    <p>To our incredible MUN advisor, Maria Faranesh — thank you for being our mentor, guide, and biggest supporter. Your dedication, enthusiasm, and belief in us have made all the difference. We couldn’t have done it without you.</p>
-  </div>
-
+  <!-- Modal -->
   <div id="committeeModal">
     <div class="modal-content">
       <span onclick="closeModal()">×</span>
