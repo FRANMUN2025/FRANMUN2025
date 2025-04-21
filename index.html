@@ -11,15 +11,16 @@
       margin: 0;
       padding: 0;
       background-image: url('franmun-bg.jpg');
-      background-size: 110%;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: #00264d;
+      background-color: #f0f4fa; /* background between top and bottom */
     }
 
     header {
-      background-color: rgba(0, 25, 51, 0.9);
+      background-color: rgba(0, 38, 77, 0.85);
       color: white;
       padding: 20px;
       display: flex;
@@ -77,7 +78,7 @@
     }
 
     footer {
-      background-color: rgba(0, 25, 51, 0.95);
+      background-color: rgba(0, 38, 77, 0.9);
       color: white;
       text-align: center;
       padding: 20px;
@@ -152,13 +153,6 @@
       height: 120px;
       cursor: pointer;
       transition: transform 0.3s, filter 0.3s;
-      background-color: white;
-      border-radius: 12px;
-      padding: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .committee-icon:hover {
@@ -168,8 +162,19 @@
 
     .committee-icon img {
       max-width: 100%;
-      max-height: 100%;
+      height: 100%;
       object-fit: contain;
+    }
+
+    .registration-note {
+      font-size: 15px;
+      margin-top: 12px;
+      color: #ffffff;
+      background-color: rgba(0, 38, 77, 0.85); /* Deep blue background */
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -201,7 +206,7 @@
 
     <div style="text-align:center;">
       <a href="https://docs.google.com/forms/d/1sOFqQOVIdU6Z--wURon5p6E5cgn-sLTFOjrpWvCkZqk/viewform?edit_requested=true" target="_blank" class="button">Register Now →</a>
-      <p>Registration includes a parent/guardian signature requirement</p>
+      <p class="registration-note">* Registration requires a parent/guardian signature</p>
     </div>
 
     <div class="card">
@@ -268,7 +273,7 @@
   </div>
 
   <footer>
-    <p>Email: <a href="mailto:franmun2025@gmail.com" style="color: #fff;">franmun2025@gmail.com</a></p>
+    <p>Email: franmun2025@gmail.com</p>
     <p>Franciscan Sister's School Nazareth</p>
     <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
     <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
