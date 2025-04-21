@@ -8,15 +8,17 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
       margin: 0;
       padding: 0;
+      background-image: url('franmun-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: #00264d;
     }
 
     .overlay {
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255, 255, 255, 0.95);
       min-height: 100vh;
     }
 
@@ -166,12 +168,11 @@
   </style>
 </head>
 <body>
-
-  <div class="top-right-button">
-    <a href="chairs.html">Chair Registration</a>
-  </div>
-
   <div class="overlay">
+    <div class="top-right-button">
+      <a href="chairs.html">Chair Registration</a>
+    </div>
+
     <div id="delegateContent">
       <header>
         <img src="7d8c75e2-c20b-4770-aa29-71ab72b07f58-dnscaled.png" alt="School Logo">
@@ -204,24 +205,19 @@
 
       <div class="card">
         <h3>Committees</h3>
-
         <div class="committee-grid">
           <div class="committee-icon" onclick="openModal('UNWOMEN')">
             <img src="unwomen.png" alt="UNWOMEN Icon" />
           </div>
-
           <div class="committee-icon" onclick="openModal('UNHRC')">
             <img src="unhrc.png" alt="UNHRC Icon" />
           </div>
-
           <div class="committee-icon" onclick="openModal('DISEC')">
             <img src="disec.png" alt="DISEC Icon" />
           </div>
-
           <div class="committee-icon" onclick="openModal('UNHSC')">
             <img src="unhsc.png" alt="UNHSC Icon" />
           </div>
-
           <div class="committee-icon" onclick="openModal('CRISIS')">
             <img src="crisis.png" alt="CRISIS Icon" />
           </div>
@@ -250,23 +246,23 @@
         <p>To our incredible MUN advisor, Maria Faranesh — thank you for being our mentor, guide, and biggest supporter. Your dedication, enthusiasm, and belief in us have made all the difference. We couldn’t have done it without you.</p>
       </div>
     </div>
-  </div>
 
-  <div id="committeeModal">
-    <div class="modal-content">
-      <span onclick="closeModal()">×</span>
-      <h2 id="modalTitle">Committee Name</h2>
-      <p><strong>Information:</strong></p>
-      <p>Coming Soon</p>
+    <div id="committeeModal">
+      <div class="modal-content">
+        <span onclick="closeModal()">×</span>
+        <h2 id="modalTitle">Committee Name</h2>
+        <p><strong>Information:</strong></p>
+        <p>Coming Soon</p>
+      </div>
     </div>
-  </div>
 
-  <footer>
-    <p>Email: franmun2025@gmail.com</p>
-    <p>Franciscan Sister's School Nazareth</p>
-    <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
-    <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>Email: franmun2025@gmail.com</p>
+      <p>Franciscan Sister's School Nazareth</p>
+      <p><a href="https://maps.app.goo.gl/w5T6kDCNtjzqwbWG8?g_st=ic" target="_blank" style="color:#fff;">View Location</a></p>
+      <p>&copy; 2025 Franciscan Sister's School MUN. All rights reserved.</p>
+    </footer>
+  </div>
 
   <script>
     function openModal(committeeName) {
